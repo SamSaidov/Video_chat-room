@@ -13,7 +13,7 @@ export const PollProvider = ({children}) => {
   ]);
 
   return (
-    <PollContext.PollProvider
+    <PollContext.Provider
       value={{
         question,
         setQuestion,
@@ -23,7 +23,7 @@ export const PollProvider = ({children}) => {
         setIsModalOpen,
       }}>
       {children}
-    </PollContext.PollProvider>
+    </PollContext.Provider>
   );
 };
 
