@@ -21,8 +21,14 @@ import PrimaryButton from '../atoms/PrimaryButton';
 const HostControlView = () => {
   const {sendControlMessage} = useContext(chatContext);
   const {primaryColor} = useContext(ColorContext);
-  const {question, setQuestion, answers, setAnswers, setIsModalOpen} =
-    useContext(PollContext);
+  const {
+    question,
+    setQuestion,
+    answers,
+    setAnswers,
+    isModalOpen,
+    setIsModalOpen,
+  } = useContext(PollContext);
   return (
     <>
       <Text style={style.heading}>Host Controls</Text>
@@ -66,7 +72,13 @@ const HostControlView = () => {
         </View>
         <View style={style.btnContainer}>
           <PrimaryButton
-            onPress={() => setIsModalOpen(true)}
+            onPress={() => {
+              setIsModalOpen(true);
+              sendControlMessage(controlMessageEnum.initiatePoll, {
+                question,
+                answers,
+              });
+            }}
             text="Start Poll"
           />
         </View>
@@ -80,7 +92,7 @@ const style = StyleSheet.create({
     fontSize: 20,
     fontWeight: '700',
     color: $config.PRIMARY_FONT_COLOR,
-    // marginBottom: 20,
+    marginBottom: 20,
     alignSelf: 'center',
   },
   btnContainer: {
