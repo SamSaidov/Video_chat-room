@@ -9,7 +9,6 @@ export const PollProvider = ({children}) => {
     {option: '', votes: 0},
     {option: '', votes: 0},
     {option: '', votes: 0},
-    {option: '', votes: 0},
   ]);
 
   return (

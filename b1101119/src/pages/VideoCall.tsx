@@ -35,6 +35,7 @@ import {SidePanelType} from '../subComponents/SidePanelEnum';
 import {videoView} from '../../theme.json';
 import Layout from '../subComponents/LayoutEnum';
 import Toast from '../../react-native-toast-message';
+import Poll from '../components/Poll';
 
 const useChatNotification = (
   messageStore: string | any[],
@@ -334,6 +335,7 @@ const VideoCall: React.FC = () => {
                   callActive={callActive}>
                   {callActive ? (
                     <View style={style.full}>
+                      <Poll />
                       <NotificationControl
                         setSidePanel={setSidePanel}
                         chatDisplayed={sidePanel === SidePanelType.Chat}>
