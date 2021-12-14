@@ -4,7 +4,7 @@ import {Line} from 'rc-progress';
 import {PollContext} from './PollContext';
 import styles from './pollStyles';
 import ChatContext, {controlMessageEnum} from './ChatContext';
-
+//
 const Poll = () => {
   const {
     question,
