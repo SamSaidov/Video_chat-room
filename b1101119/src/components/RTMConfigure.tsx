@@ -45,7 +45,7 @@ const RtmConfigure = (props: any) => {
     });
   };
 
-  const [setQuestions, setAnswers, setIsModalOpen] = useContext(PollContext);
+  const {setQuestion, setAnswers, setIsModalOpen} = useContext(PollContext);
 
   const addMessageToPrivateStore = (
     uid: string,
@@ -211,7 +211,7 @@ const RtmConfigure = (props: any) => {
           } else if (text[1] === controlMessageEnum.initiatePoll) {
             const {question, answers} = JSON.parse(text.slice(2));
 
-            setQuestions(question);
+            setQuestion(question);
             setAnswers(answers);
             setIsModalOpen(true);
           }

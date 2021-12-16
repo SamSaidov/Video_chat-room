@@ -79,7 +79,7 @@ const HostControlView = () => {
                 answers,
               });
             }}
-            text="Start the Poll"
+            text={'Start the Poll'}
           />
         </View>
       </View>

@@ -34,7 +34,7 @@ const Poll = () => {
     setTotalVotes(
       voteData.map((item) => item.votes).reduce((prev, next) => prev + next),
     );
-  });
+  }, [voteData]);
 
   const submitVote = (e, chosenAnswer) => {
     if (!voted) {
